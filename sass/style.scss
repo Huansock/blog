@@ -1,0 +1,20 @@
+:root {
+  --real-book-bg: oklch(0.9674 0.0055 90.8);
+  --real-book-fg: oklch(0.1395 0.0055 90.8);
+}
+
+@font-face {
+  font-family : pretendard;
+  src: url(Pretendard_Regular.woff2);
+}
+
+html{ scroll-behavior: smooth; font-family: pretendard;}
+
+body {
+  background: var(--real-book-bg);
+  color: var(--real-book-fb);
+}
+
+a {
+	text-decoration-line: none ;
+}
