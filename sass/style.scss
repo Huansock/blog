@@ -69,5 +69,7 @@ h1 {
 p {
   max-width: 80ch;
   margin-inline: auto;
-  text-wrap: pretty;
+  text-wrap: stable;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
