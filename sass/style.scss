@@ -31,10 +31,6 @@ body {
 
 a {
   color: var(--color-text-link);
-  font-weight: bold;
-  text-decoration-line: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.15em;
 }
 
 a:visited {
@@ -68,4 +64,9 @@ h1 {
   padding: 0;
   text-align: center;
   text-wrap: stable;
+}
+
+p {
+  max-width: 80ch;
+  margin-inline: auto;
 }
