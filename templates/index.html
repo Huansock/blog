@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h1 class="title">
-	양우석의 블로그
-</h1>
-<ul>
-	<li>
-		<a href="{{ get_url(path='@/diary/_index.md') }}">일기</a>
-	</li>
-</ul>
+    <h1 class="title">양우석의 블로그</h1>
+    <ul>
+        <li>
+            <a href="{{ get_url(path='@/diary/_index.md') }}">일기</a>
+        </li>
+        <li>
+            <a href="{{ get_url(path='categories') }}">카테고리</a>
+        </li>
+    </ul>
 {% endblock content %}

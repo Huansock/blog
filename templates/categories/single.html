@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <p><a href="{{ get_url(path='categories') }}">← 전체 카테고리로 돌아가기</a></p>
+    <h1>{{ term.name }} 목록</h1>
+    <ul>
+        {% for page in term.pages %}
+            <li>
+                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                <time datetime="{{ page.date }}">{{ page.date }}</time>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,14 +1,19 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h1 class="title">
-  {{ section.title }}
-</h1>
-<ul>
-  <!-- If you are using pagination, section.pages will be empty.
-       You need to use the paginator object -->  
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
-</ul>
+    <p><a href="{{ get_url(path='') }}">← 첫 화면으로 돌아가기</a></p>
+    <h1 class="title">{{ section.title }}</h1>
+    <ul>
+        <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+        {% for page in section.pages %}
+            <li>
+                <a href="{{ page.permalink | safe }}"
+                   rel="bookmark"
+                   title="{{ page.title }}">{{ page.title }}</a>
+                <time datetime="{{ page.date }}"
+                      title="{{ page.date | date(format='%Y년 %m월 %d일') }}">
+                    {{ page.date | date(format="%Y-%m-%d") }}
+                </time>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock content %}
