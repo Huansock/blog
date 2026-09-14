@@ -1,6 +1,6 @@
 # The URL the site will be built for
 base_url = "https://blog.usogi.org"
-
+default_language = 'ko'
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -15,6 +15,22 @@ taxonomies = [
 
 [markdown.highlighting]
 theme = "catppuccin-mocha"
+
+[translations]
+title = "양우석 블로그"
+
+[languages]
+
+[languages.de]
+generate_feeds = true 
+build_search_index = true
+taxonomies = [
+	{name = 'categories', feed = true}
+]
+
+[languages.de.translations]
+title = "Wooseok Yang Blog"
+
 
 
 [extra]

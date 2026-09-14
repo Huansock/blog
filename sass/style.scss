@@ -42,22 +42,14 @@ a:visited {
   outline-offset: 0.125rem;
 }
 
-ul {
-  inline-size: fit-content;
-  max-inline-size: 100%;
+ul, ol {
+  max-inline-size: 80ch;
   margin-inline: auto;
   padding-inline-start: 1.5rem;
-  text-align: start;
 }
 
-ul li {
-  padding-block: 0.1rem;
-}
-
-ul li > a {
-  display: inline-block;
-  min-inline-size: 24px;
-  min-block-size: 24px;
+ul li, ol li {
+  padding-block: 0.15rem;
 }
 
 h1 {
@@ -72,4 +64,55 @@ p {
   text-wrap: stable;
   word-break: keep-all;
   overflow-wrap: break-word;
+}
+
+nav.menu > ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav.menu > ul > li {
+  padding: 0.5rem;
+}
+
+nav.menu > ul > li > a {
+  display: inline-flex;
+  align-items: center;
+  min-inline-size: 24px;
+  min-block-size: 24px;
+}
+
+ul.entry-list {
+  max-inline-size: 60ch;
+  margin-inline: auto;
+  padding: 0;
+  list-style: none;
+}
+
+ul.entry-list > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding-block: 0.35rem;
+}
+
+ul.entry-list > li > a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 24px;
+}
+
+ul.entry-list > li > time,
+ul.entry-list > li > span {
+  font-size: 0.875rem;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+ul.entry-list.center > li {
+  justify-content: center;
 }

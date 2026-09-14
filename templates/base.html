@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko" color-mode="user">
+<html lang="{{ lang }}" color-mode="user">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ get_url(path='style.css') }}" media="all">
-        <title>양우석 블로그</title>
+        <title>{{ trans(key="title", lang=lang | default(value=config.default_language)) }}</title>
     </head>
     <body>
+        <nav class="menu">
+            <ul>
+                <li><a href="{{ get_url(path='') }}">첫 화면</a></li>
+                <li><a href="#">양우석</a></li>
+                <li><a href="#">연락처</a></li>
+            </ul>
+        </nav>
         <section class="section">
             <div class="container">
                 {% block content %}
