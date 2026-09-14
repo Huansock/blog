@@ -2,20 +2,11 @@
 {% block content %}
     <h1 class="title">{{ trans(key="title", lang=lang) }}</h1>
     <ul class="entry-list center">
-        {% if lang == "de" %}
-            <li>
-                <a href="{{ get_url(path='@/diary/_index.md') }}">Tagebuch</a>
-            </li>
-            <li>
-                <a href="/categories">Kategorien</a>
-            </li>
-        {% else %}
-            <li>
-                <a href="{{ get_url(path='@/diary/_index.md') }}">일기</a>
-            </li>
-            <li>
-                <a href="/categories">카테고리</a>
-            </li>
-        {% endif %}
+        <li>
+            <a href="{{ get_url(path='@/diary/_index.md', lang=lang) }}">{{ trans(key="diary", lang=lang) }}</a>
+        </li>
+        <li>
+            <a href="{{ get_url(path='categories', lang=lang) }}">{{ trans(key="categories", lang=lang) }}</a>
+        </li>
     </ul>
 {% endblock content %}

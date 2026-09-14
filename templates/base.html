@@ -9,9 +9,26 @@
     <body>
         <nav class="menu">
             <ul>
-                <li><a href="{{ get_url(path='') }}">첫 화면</a></li>
-                <li><a href="#">양우석</a></li>
-                <li><a href="#">연락처</a></li>
+                <li><a href="{{ get_url(path='', lang=lang | default(value=config.default_language)) }}">{{ trans(key="home", lang=lang | default(value=config.default_language)) }}</a></li>
+                {% for l in config.extra.languages %}
+                    {% if l.code != lang %}
+                        {% set_global target_url = get_url(path="", lang=l.code) %}
+                        {% if page and page.translations %}
+                            {% for t in page.translations %}
+                                {% if t.lang == l.code %}
+                                    {% set_global target_url = t.permalink %}
+                                {% endif %}
+                            {% endfor %}
+                        {% elif section and section.translations %}
+                            {% for t in section.translations %}
+                                {% if t.lang == l.code %}
+                                    {% set_global target_url = t.permalink %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <li><a href="{{ target_url }}" hreflang="{{ l.code }}">{{ l.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </nav>
         <section class="section">

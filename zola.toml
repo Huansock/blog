@@ -18,6 +18,9 @@ theme = "catppuccin-mocha"
 
 [translations]
 title = "양우석 블로그"
+home = "첫 화면"
+diary = "일기"
+categories = "카테고리"
 
 [languages]
 
@@ -30,8 +33,26 @@ taxonomies = [
 
 [languages.de.translations]
 title = "Wooseok Yang Blog"
+home = "Startseite"
+diary = "Tagebuch"
+categories = "Kategorien"
 
+[languages.en]
+generate_feeds = true 
+build_search_index = true
+taxonomies = [
+	{name = 'categories', feed = true}
+]
 
+[languages.en.translations]
+title = "Wooseok Yang's Blog"
+home = "Home"
+diary = "Diary"
+categories = "Categories"
 
 [extra]
-# Put all your custom variables here
+languages = [
+	{ code = "ko", name = "한국어" },
+	{ code = "de", name = "Deutsch" },
+	{ code = "en", name = "English" },
+]
