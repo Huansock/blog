@@ -21,6 +21,7 @@ title = "양우석 블로그"
 home = "첫 화면"
 diary = "일기"
 categories = "카테고리"
+404-message = "찾으시는 페이지가 없습니다."
 
 [languages]
 
@@ -36,6 +37,7 @@ title = "Wooseok Yang Blog"
 home = "Startseite"
 diary = "Tagebuch"
 categories = "Kategorien"
+404-message = "Diese Webseite existiert noch nicht"
 
 [languages.en]
 generate_feeds = true 
@@ -49,10 +51,5 @@ title = "Wooseok Yang's Blog"
 home = "Home"
 diary = "Diary"
 categories = "Categories"
+404-message = "The Page is missing"
 
-[extra]
-languages = [
-	{ code = "ko", name = "한국어" },
-	{ code = "de", name = "Deutsch" },
-	{ code = "en", name = "English" },
-]

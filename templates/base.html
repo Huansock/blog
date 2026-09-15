@@ -4,31 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ get_url(path='style.css') }}" media="all">
-        <title>{{ trans(key="title", lang=lang | default(value=config.default_language)) }}</title>
+        <title>{{ trans(key="title", lang=lang) }}</title>
     </head>
     <body>
         <nav class="menu">
             <ul>
-                <li><a href="{{ get_url(path='', lang=lang | default(value=config.default_language)) }}">{{ trans(key="home", lang=lang | default(value=config.default_language)) }}</a></li>
-                {% for l in config.extra.languages %}
-                    {% if l.code != lang %}
-                        {% set_global target_url = get_url(path="", lang=l.code) %}
-                        {% if page and page.translations %}
-                            {% for t in page.translations %}
-                                {% if t.lang == l.code %}
-                                    {% set_global target_url = t.permalink %}
-                                {% endif %}
-                            {% endfor %}
-                        {% elif section and section.translations %}
-                            {% for t in section.translations %}
-                                {% if t.lang == l.code %}
-                                    {% set_global target_url = t.permalink %}
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                        <li><a href="{{ target_url }}" hreflang="{{ l.code }}">{{ l.name }}</a></li>
-                    {% endif %}
-                {% endfor %}
+                <li><a href="{{ get_url(path='', lang=lang) }}">{{ trans(key="home", lang=lang) }}</a></li>
+                <li><a href="{{ get_url(path='',) }}">한국어</a></li>
+                <li><a href="{{ get_url(path='', lang='de') }}">Deutsch</a></li>
+                <li><a href="{{ get_url(path='', lang='en') }}">English</a></li>
             </ul>
         </nav>
         <section class="section">
